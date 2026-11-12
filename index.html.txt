@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Battery Monitor</title>
+</head>
+<body>
+
+<h2>Smartphone Battery Monitor</h2>
+<p id="result"></p>
+
+<script>
+let battery = 100;
+let output = "";
+
+while(battery > 0)
+{
+    output += "Battery = " + battery + "%<br>";
+
+    if(battery < 20)
+    {
+        output += "Warning: Low Battery!<br>";
+    }
+
+    battery = battery - 15;
+
+    if(battery <= 0)
+    {
+        output += "Battery = 0%<br>";
+        output += "Phone Switched Off";
+        break;
+    }
+}
+
+document.getElementById("result").innerHTML = output;
+</script>
+
+</body>
+</html>
